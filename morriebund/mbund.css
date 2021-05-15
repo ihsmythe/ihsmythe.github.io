@@ -1,0 +1,50 @@
+body
+{
+  background-image: url("watercolourcherubsmall.jpg");
+}
+
+table
+{
+  background-color:white;
+  margin-left: auto;
+  margin-right: auto;
+  width:75%;
+}
+
+table caption
+{
+  font-size: 200%;
+}
+
+td
+{
+  padding-bottom:12px;
+}
+
+td.col1
+{
+  white-space:nowrap;
+  text-align:right;
+  vertical-align:top;
+  padding-right:5px;
+}
+
+table.morrie
+{
+  background-color:white;
+  padding:5px;
+  border-width:thick;
+  border-spacing: 2px;
+  width:40%;
+  margin-left:0;
+  border-style:outset;
+  border-collapse: separate;
+}
+table.morrie th {
+  border-width: 1px;
+  padding: 1px;
+}
+table.morrie td {
+  border-width: 0px;
+  padding: 1px;
+}

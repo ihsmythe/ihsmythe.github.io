@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Stories for Animals by I. H. Smythe</title>
+    <meta name="Description" content="Stories for Animals, by I. H. Smythe" />
+    <meta name="Keywords" content="author, writer, I. H. Smythe, Stories for Animals" />
+    <link href="css/ihs.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      div#excerpt
+      {
+        width: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: LightSkyBlue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <table class="cols">
+        <tr id="headerrow">
+          <td class="col1 colRight"><h2>Stories For Animals</h2><a href="index.html">Home</a> | <a href="Gallery.html">Gallery</a> | <a href="PoetryForAnimals.html">Poetry For Animals</a> | Stories For Animals</td>
+          <td class="col2 colLeft"><a href="DwynwensFeast.html">Dwynwen's Feast</a> | <a href="Plays.html">Plays</a> | <a href="videos.html">Videos</a> | <a href="Shorts.html">Short works</a> | <a href="buy.html">Store</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="contents">
+      <table class="cols">
+        <tr id="bodyrow">
+          <td class="col1">
+          <div id="cover">
+            <img alt="Stories for Animals" src="images/Stories.png" />
+          </div>
+          <br>
+          <div class="inset" id="excerpt">
+            Read an excerpt from
+            <select ONCHANGE="location = this.options[this.selectedIndex].value;">
+              <option value="StoriesForAnimals.html">select story...</option>
+              <option value="pdf/Preface.pdf">Preface I and Preface II</option>
+              <option value="pdf/Scaredy Cats ten.pdf">Scaredy Cats</option>
+              <option value="pdf/Hounded ten.pdf">Hounded</option>
+              <option value="pdf/Fish and Chips ten.pdf">Fish and Chips</option>
+              <option value="pdf/Slugfest ten.pdf">Slugfest</option>
+              <option value="pdf/Beeline ten.pdf">Bee Line</option>
+            </select>
+          </div><br><br>
+         </td>
+          <td class="col2 colLeft">
+          <P>
+            <i id="quote"></i><br><span id="quoter"></span>
+          </P>
+          <P class="grey animal">
+            If you are reading this, you are an animal.
+          </P>
+          <P>
+            There are literally millions of books written <i>about</i> animals, but only two books written specifically <I>for</I> animals &ndash; and this is one of them.* Originally these stories were published on the wind as an olfactory collection for dogs, but when they soared to #1 on the bestseller lists, other creatures demanded versions for themselves. Thus they were published with vegetable based inks for the edification of rabbits and slugs; converted into a vigorous waggle dance for honeybees; transcribed into whale songs, bird calls, cricket chirps, and elephant trumpets; and, lastly, translated into cow pies for the satisfaction of dung beetles and houseflies. All of these animals enjoyed reading about phobic cats, skeptical basset hounds, heroic honeybees, tree-hugging slugs, and megalomaniacal mollusks &ndash; but now, at long last, <i>Stories for Animals</i> is available to animals of all species &ndash; including yours.
+          </P>
+          <P class="animal">
+            Recommended for ages 11+ (77+ in dog years)
+          </P>
+          <P style="font-size: small">
+            * The other is <a href="PoetryForAnimals.html"><I>Poetry for Animals</I></a>, available at fine bookstores and from woodland creatures everywhere.
+          </P></td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer">
+      <br>
+      <br>
+      &copy; 2017 I. H. Smythe
+    </div>
+    <script type="text/javascript">
+      var quote;
+      var quoter;
+      var index = Math.floor(Math.random() * 3);
+      if (index == 0)
+      {
+        quote = "&ldquo;I.H. Smythe has a gift for comic timing and understatement, and the plots of the stories resolve themselves in ways that are unexpected and satisfyingly funny.&rdquo;";
+        quoter = "-iUniverse";
+      }
+      else if (index == 1)
+      {
+        quote = "&ldquo;I.H. Smythe has written a funny, intelligent piece of literature for young people. It is sure to appeal to bookish children and young teens (and to those of their parents and educators who have a sense of humour).&rdquo;";
+        quoter = "-iUniverse";
+      }
+      else
+      {
+        quote = "&ldquo;Ingrid's animal stories remind me of Roald Dahl.  Her comic sensibility seems to me similar to Dahl's and, like Dahl, her work can be read with as much pleasure by adults on their own as in the company of children.&rdquo;";
+        quoter = "-William Rodman PhD";
+      }
+      document.getElementById('quote').innerHTML = quote;
+      document.getElementById('quoter').innerHTML = quoter;
+    </script>
+    <script type="text/javascript" src="js/ga.js"></script>
+  </body>
+</html>

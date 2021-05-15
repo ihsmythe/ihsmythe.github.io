@@ -1,0 +1,40 @@
+table.photo
+{
+  width: 640px;
+  border-spacing: 2px;
+  border-collapse: separate;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#thumbs
+{
+  width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th.photo
+{
+  background-color:silver;
+  padding: 10px;
+}
+
+td.photo
+{
+  text-align: center;
+  padding-left:60px;
+  padding-right:60px;
+}
+
+img.thumb
+{
+  border: 8px solid white;
+  margin: 20px;
+}
+
+img.photo
+{
+  border: 16px solid white;
+}
+

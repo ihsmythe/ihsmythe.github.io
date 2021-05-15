@@ -1,0 +1,173 @@
+html
+{
+  height: 100%;
+}
+
+head
+{
+  width: 100%;
+  /*IE hack*/
+  text-align: center;
+}
+/* unvisited link */
+a:link {
+    color: CornflowerBlue;
+}
+
+/* visited link */
+a:visited {
+    color: Blue;
+}
+
+/* mouse over link */
+a:hover {
+    color: Blue;
+}
+
+/* selected link */
+a:active {
+    color: Red;
+}
+
+#header
+{
+  width: 960px;
+  height: 108px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image:url(../images/BookHeader.png);
+  font-variant: small-caps;
+  font-size:80%;
+}
+
+#headerrow
+{
+  vertical-align:bottom;
+}
+
+#bodyrow
+{
+  vertical-align:top;
+}
+
+table.cols
+{
+  width:100%;
+}
+
+td.col1
+{
+  width:50%;
+  padding-left:60px;
+  padding-right:20px;
+}
+
+td.col2
+{
+  width:50%;
+  padding-left:20px;
+  padding-right:60px;
+
+}
+
+div.colBoth
+{
+  width:860px;
+  margin-left:50px;
+  background-color: #E8E8E8;
+}
+
+div.footnote
+{
+  float:right;
+  width:400px;
+  padding-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  font-size:80%;
+  box-shadow: 10px 10px 5px #888888;
+  background-color: #FFFFDD;
+}
+
+td.colLeft
+{
+  text-align: left;
+}
+
+td.colRight
+{
+  text-align: right;
+}
+
+td.colFull
+{
+  text-align: justify;
+}
+
+td.centre
+{
+  text-align: center;
+}
+
+body
+{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  /*IE hack*/
+  text-align: center;
+}
+
+div.contents
+{
+  height: 100%;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image:url(../images/BookBody.png);  
+  background-repeat:repeat-y;
+}
+
+p.animal
+{
+  font-size: large;
+  text-align: center;
+  font-style:italic;
+}
+
+p.grey
+{
+  color: gray;
+}
+
+p.small
+{
+  font-size:small;
+}
+
+p.right
+{
+  text-align: right;
+}
+
+p.indented
+{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: arial, Helvetica,sans-serif; 
+}
+
+p.negatep
+{
+  margin-top: -15px;
+}
+
+div.footer
+{
+  width: 960px;
+  height: 162px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image:url(../images/BookFooter.png); 
+  font-variant: small-caps;
+}
