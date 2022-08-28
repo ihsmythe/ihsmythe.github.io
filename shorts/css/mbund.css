@@ -1,6 +1,6 @@
 body
 {
-  background-image: url("watercolourcherubsmall.jpg");
+  background-image: url("../images/watercolourcherubsmall.jpg");
 }
 
 table
@@ -8,7 +8,7 @@ table
   background-color:white;
   margin-left: auto;
   margin-right: auto;
-  width:75%;
+  width:90%;
 }
 
 table caption
