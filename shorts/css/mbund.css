@@ -13,7 +13,7 @@ table
 
 table caption
 {
-  font-size: 200%;
+  font-size: large;
 }
 
 td
@@ -35,14 +35,14 @@ table.morrie
   padding:5px;
   border-width:thick;
   border-spacing: 2px;
-  width:40%;
   margin-left:0;
   border-style:outset;
   border-collapse: separate;
 }
 table.morrie th {
   border-width: 1px;
-  padding: 1px;
+  padding-right: 5px;
+  text-align:right;
 }
 table.morrie td {
   border-width: 0px;

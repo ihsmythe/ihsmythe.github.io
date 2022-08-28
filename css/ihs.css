@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+#navBar {
+  background-color: blueviolet;
+
+}
+
 #nav li {
   float: left;
   position: relative;
@@ -36,13 +41,13 @@ body {
   margin: 0;
   padding: 0 0 0 5px;
   /* shows selected, unselectable menu item*/
-  color: DarkGray;
+  color: yellow;
 }
 
 #nav a {
   display: block;
   padding: 0px 5px;
-  color: #000000;
+  color: darkblue;
   text-decoration: none;
 }
 
@@ -56,7 +61,7 @@ body {
   margin: 0;
   padding: 0;
   /*Colour of lines between LI items, and background colour of unselectable item*/
-  background: #DDDDFF;
+  background: lightgray;
   list-style: none;
   position: absolute;
   left: -9999px;
@@ -93,7 +98,7 @@ body {
 
 #nav li:hover ul li a:hover {
   /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-  background: #212128;
+  background: whitesmoke;
 }
 
 @media only screen and (max-width: 959px) {
@@ -121,6 +126,7 @@ body {
     clear: both;
     position: relative;
     width: 100%;
+    padding-top: 10px;
   }
 
   #leftCol {
