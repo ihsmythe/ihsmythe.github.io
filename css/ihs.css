@@ -27,11 +27,6 @@ body {
   text-align: center;
 }
 
-#navBar {
-  background-color: blueviolet;
-
-}
-
 #nav li {
   float: left;
   position: relative;
@@ -118,7 +113,6 @@ body {
     list-style: none;
     z-index: 5;
     font-variant: small-caps;
-    font-size: small;
     text-align: center;
   }
 
@@ -181,7 +175,6 @@ body {
     list-style: none;
     z-index: 5;
     font-variant: small-caps;
-    font-size: small;
   }
 
   #contents {
