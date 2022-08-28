@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <title>I. H. Smythe &ndash; Photos</title>
+  <meta name="Description" content="I. H. Smythe Photos" />
+  <meta name="Keywords" content="author, writer, photos, I. H. Smythe" />
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <script type="text/javascript" src="./js/photos.js"></script>
+  <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
+  <link href="./css/gallery.css" rel="stylesheet" type="text/css" />
+  <style>
+    @media only screen and (min-width: 960px) {
+      #contents {
+        height: 960px;
+      }
+    }
+  </style>
+  <div id="header"></div>
+</head>
+
+<body>
+  <div id="contents">
+    <form id="navButtons">
+      <input value="<< First" type="button">
+      <input value="< Prev" type="button">
+      <input value="Next >" type="button">
+      <input value="Last >>" type="button">
+    </form>
+    <div id="caption">Loading caption...</div>
+    <div id="photoDiv">
+      <img id="photoImg" alt="Loading photo..."></img>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script type="text/javascript">
+    innerInit();
+    initPhoto();
+  </script>
+</body>
+
+</html>

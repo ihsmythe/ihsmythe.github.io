@@ -1,30 +1,74 @@
-table.photo
-{
-  width: 640px;
-  border-spacing: 2px;
-  border-collapse: separate;
+#navButtons {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#caption {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color:silver;
+  padding: 10px;
+  width: 80%;
+}
+
+#photoDiv {
+  padding-top: 20px;
+  border-spacing: 2px;
+  border-collapse: separate;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#photoImg {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:60px;
+  padding-right:60px;
 }
 
 #thumbs
 {
-  width: 840px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #EEEEEE;
 }
 
-th.photo
-{
-  background-color:silver;
-  padding: 10px;
-}
+@media only screen and (min-width: 960px) {
+  #contents {
+    /* set position relative: anything inside with position absolute will use this as its reference */
+    position: relative;
+    width: 960px;
+    /* TODO: Why won't contents expand vertically to match leftCol and rightCol? This is a hack that will result in missing content when col is long: */
+    height: 2500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../../images/BookBody.png);
+    background-repeat: repeat-y;
+  }
 
-td.photo
-{
-  text-align: center;
-  padding-left:60px;
-  padding-right:60px;
+  #caption {
+    width: 560px;
+  }
+  #photoImg {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:60px;
+    padding-right:60px;
+  }
+    
+  #thumbs
+  {
+    width: 840px;
+    background-color: transparent;
+  }
 }
 
 img.thumb

@@ -5,36 +5,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../images/favicon.png">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Like a Tide Rising</title>
   <meta name="Description" content="Order 'Like a Tide Rising' by Ingrid Hansen Smythe and Los Haward" />
   <meta name="Keywords" content="composer, performer, Ingrid Hansen Smythe, Like a Tide Rising, Los Haward" />
   <script type="text/javascript" src="../js/menu.js"></script>
+  <script type="text/javascript" src="./js/latr.js"></script>
   <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
   <link href="./css/latr.css" rel="stylesheet" type="text/css" />
   <div id="header"></div>
-  <script type="text/javascript">
-    // Pop out of frame if possible
-    if (top.frames.length != 0)
-      top.location = self.document.location;
-
-    // Stop, replace audio source, and start the audio player
-    function updateAudioSource() {
-      title = document.getElementById("selector").value;
-      mp3 = document.getElementById("audioMP3");
-      ogg = document.getElementById("audioOGG");
-      wav = document.getElementById("audioWAV");
-      // Load new sources
-      mp3.src = "mp3/" + title + ".mp3";
-      ogg.src = "ogg/" + title + ".ogg";
-      wav.src = "wav/" + title + ".wav";
-      player = document.getElementById("player");
-      player.pause(); // Stop playing
-      player.currentTime = 0; // Set to start
-      player.load(); // Load new sources
-      player.play(); // Start playing
-    }
-  </script>
 
 </head>
 
