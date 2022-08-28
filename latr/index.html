@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Like a Tide Rising</title>
+  <meta name="Description" content="Order 'Like a Tide Rising' by Ingrid Hansen Smythe and Los Haward" />
+  <meta name="Keywords" content="composer, performer, Ingrid Hansen Smythe, Like a Tide Rising, Los Haward" />
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
+  <link href="./css/latr.css" rel="stylesheet" type="text/css" />
+  <div id="header"></div>
+  <script type="text/javascript">
+    // Pop out of frame if possible
+    if (top.frames.length != 0)
+      top.location = self.document.location;
+
+    // Stop, replace audio source, and start the audio player
+    function updateAudioSource() {
+      title = document.getElementById("selector").value;
+      mp3 = document.getElementById("audioMP3");
+      ogg = document.getElementById("audioOGG");
+      wav = document.getElementById("audioWAV");
+      // Load new sources
+      mp3.src = "mp3/" + title + ".mp3";
+      ogg.src = "ogg/" + title + ".ogg";
+      wav.src = "wav/" + title + ".wav";
+      player = document.getElementById("player");
+      player.pause(); // Stop playing
+      player.currentTime = 0; // Set to start
+      player.load(); // Load new sources
+      player.play(); // Start playing
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="contents">
+    <div id="leftCol">
+      <div class="center">
+        <a href="pdf/Like a Tide Rising liner notes.pdf"><img src="images/Like a Tide Rising cover.png" alt="Like a Tide Rising"></a>
+        <a href="pdf/Like a Tide Rising liner notes.pdf"><img src="images/Like a Tide Rising set 360.png" alt="4-CD set"></a>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+      </div>  
+    </div>
+    <div id="rightCol">
+      <p>Here the enigmatic writer Los Haward gives us a dazzling selection of his work that's alternately reverent,
+      irreverent, gut-wrenchingly sad, explosively joyous, pessimistic, optimistic, funny, and tragic&mdash;sometimes
+      all in the same poem. His work is so evocative, insightful, and inspiring it quite literally made me
+      sing&mdash;and I couldn't believe my luck when he told me that I could do anything I wanted with it. And so I did.
+      I made this album. Twenty pieces of music crafted around his words (either sung or read, depending) and an
+      additional thirty poems, read by the poet himself in his expressive, sagacious, sensual way.
+      <P>This album comes in two volumes: Volume 1 contains songs, and Volume 2 poems. Each volume has 2 CDs, and
+        includes a booklet containing lyrics and poems.</P>
+      <p>Listen to a sample:
+        <select id="selector" onchange="updateAudioSource()">
+          <option value="Ophelia">Ophelia (Vol. 1)</option>
+          <option value="Not Much to Ask">Not Much to Ask (Vol. 1)</option>
+          <option value="Church Service">Church Service (Vol. 2)</option>
+          <option value="Ariadne's Thread">Ariadne's Thread (Vol. 1)</option>
+          <option value="Exile">Exile (Vol. 1)</option>
+          <option value="Advice to Other Writers">Advice to Other Writers (Vol. 2)</option>
+        </select>
+        <br><span style="font-size:60%">Player performance may vary depending on browser and connection speed.</span>
+        <audio controls preload="auto" id="player">
+          <source id="audioMP3" src="mp3/Ophelia.mp3" type="audio/mpeg">
+          <source id="audioOGG" src="ogg/Ophelia.ogg" type="audio/ogg">
+          <source id="audioWAV" src="wav/Ophelia.wav" type="audio/wav">
+          Your browser does not support this audio player.
+        </audio>
+      </p>
+      <p class="thick">Read the <a href="./Like a Tide Rising liner notes.pdf">liner notes and lyrics</a>!</p>
+      <p>You can buy this album from <a
+          href="https://itunes.apple.com/ca/album/like-a-tide-rising/1360694098">iTunes</a>, or listen on <a
+          href="https://play.google.com/music/m/Bsjgjge6hplry5voifx4w5p2b4m?t=Like_a_Tide_Rising_-_Los_Haward">Google
+          Music</a> or <a href="https://open.spotify.com/album/5Ps1CiunPc8K0yXVyGe6pl">Spotify</a>. And if you'd like to
+        order a limited-edition 4-CD set of both volumes, or a 2-CD set of just Volume 1, email me at ihsmythe@gmail.com
+        and we'll work out how to get it to you. When you provide your shipping address, I'll calculate the cost of
+        shipping and email you the total, payable by PayPal. If you'd like fast delivery please let me know, otherwise
+        I'll ship by the least expensive means possible.</p>
+      <p>Thanks!</p>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script type="text/javascript">
+    innerInit();
+  </script>
+</body>
+
+</html>

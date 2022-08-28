@@ -1,0 +1,9 @@
+.album {
+    border: 16px solid white;
+}
+input[type=number]{
+    width: 30px;
+}
+p.thick {
+    font-weight: bold;
+}

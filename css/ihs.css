@@ -1,173 +1,219 @@
-html
-{
-  height: 100%;
+/* Disable mobile device shrinking to fit */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
 }
 
-head
-{
+/* RESET */
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN */
+head {
   width: 100%;
-  /*IE hack*/
-  text-align: center;
-}
-/* unvisited link */
-a:link {
-    color: CornflowerBlue;
-}
-
-/* visited link */
-a:visited {
-    color: Blue;
-}
-
-/* mouse over link */
-a:hover {
-    color: Blue;
-}
-
-/* selected link */
-a:active {
-    color: Red;
-}
-
-#header
-{
-  width: 960px;
-  height: 108px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image:url(../images/BookHeader.png);
-  font-variant: small-caps;
-  font-size:80%;
-}
-
-#headerrow
-{
-  vertical-align:bottom;
-}
-
-#bodyrow
-{
-  vertical-align:top;
-}
-
-table.cols
-{
-  width:100%;
-}
-
-td.col1
-{
-  width:50%;
-  padding-left:60px;
-  padding-right:20px;
-}
-
-td.col2
-{
-  width:50%;
-  padding-left:20px;
-  padding-right:60px;
-
-}
-
-div.colBoth
-{
-  width:860px;
-  margin-left:50px;
-  background-color: #E8E8E8;
-}
-
-div.footnote
-{
-  float:right;
-  width:400px;
-  padding-left:20px;
-  padding-top:10px;
-  padding-bottom:10px;
-  margin-bottom:10px;
-  font-size:80%;
-  box-shadow: 10px 10px 5px #888888;
-  background-color: #FFFFDD;
-}
-
-td.colLeft
-{
-  text-align: left;
-}
-
-td.colRight
-{
-  text-align: right;
-}
-
-td.colFull
-{
-  text-align: justify;
-}
-
-td.centre
-{
   text-align: center;
 }
 
-body
-{
+body {
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  /*IE hack*/
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
-div.contents
-{
-  height: 100%;
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image:url(../images/BookBody.png);  
-  background-repeat:repeat-y;
+#nav li {
+  float: left;
+  position: relative;
 }
 
-p.animal
-{
-  font-size: large;
-  text-align: center;
-  font-style:italic;
+#nav li>p {
+  margin: 0;
+  padding: 0 0 0 5px;
+  /* shows selected, unselectable menu item*/
+  color: DarkGray;
 }
 
-p.grey
-{
-  color: gray;
+#nav a {
+  display: block;
+  padding: 0px 5px;
+  color: #000000;
+  text-decoration: none;
 }
 
-p.small
-{
-  font-size:small;
+#nav a:hover {
+  color: blue;
+  text-decoration: underline;
 }
 
-p.right
-{
-  text-align: right;
+/*--- DROPDOWN ---*/
+#nav ul {
+  margin: 0;
+  padding: 0;
+  /*Colour of lines between LI items, and background colour of unselectable item*/
+  background: #DDDDFF;
+  list-style: none;
+  position: absolute;
+  left: -9999px;
+  /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 
-p.indented
-{
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: arial, Helvetica,sans-serif; 
+#nav ul li {
+  padding-top: 1px;
+  /* Introducing a padding between the li and the a gives the illusion of spaced items */
+  float: none;
 }
 
-p.negatep
-{
-  margin-top: -15px;
+#nav ul a {
+  white-space: nowrap;
+  /* Stop text wrapping and creating multi-line dropdown items */
 }
 
-div.footer
-{
-  width: 960px;
-  height: 162px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image:url(../images/BookFooter.png); 
-  font-variant: small-caps;
+#nav li:hover ul {
+  /* Display the dropdown on hover */
+  left: 0;
+  /* Bring back on-screen when needed */
+}
+
+#nav li:hover a {
+  /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+  /*background: #FF4444;*/
+  text-decoration: underline;
+}
+
+#nav li:hover ul a {
+  /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+  text-decoration: none;
+}
+
+#nav li:hover ul li a:hover {
+  /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+  background: #212128;
+}
+
+@media only screen and (max-width: 959px) {
+  #header {
+    position: relative;
+    width: 100%;
+  }
+
+  #title {
+    position: relative;
+    text-align: center;
+    font-size: large;
+  }
+
+  #nav {
+    position: relative;
+    list-style: none;
+    z-index: 5;
+    font-variant: small-caps;
+    font-size: small;
+    text-align: center;
+  }
+
+  #contents {
+    clear: both;
+    position: relative;
+    width: 100%;
+  }
+
+  #leftCol {
+    position: relative;
+    width: 90%;
+    padding-left: 20px;
+  }
+
+  #rightCol {
+    position: relative;
+    width: 90%;
+    padding-left: 20px;
+  }
+
+  #footer {
+    position: relative;
+    width: 100%;
+    font-variant: small-caps;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  #header {
+    /* set position relative: anything inside with position absolute will use this as its reference */
+    position: relative;
+    width: 960px;
+    height: 108px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/BookHeader.png);
+  }
+
+  #title {
+    position: absolute;
+    width: 370px;
+    text-align: center;
+    top: 34px;
+    left: 100px;
+    height: 36px;
+    font-size: large;
+    vertical-align: bottom;
+  }
+
+  #nav {
+    margin: 0;
+    position: absolute;
+    top: 58px;
+    left: 40px;
+    height: 20px;
+    text-align: left;
+    list-style: none;
+    z-index: 5;
+    font-variant: small-caps;
+    font-size: small;
+  }
+
+  #contents {
+    /* set position relative: anything inside with position absolute will use this as its reference */
+    position: relative;
+    width: 960px;
+    /* TODO: Why won't contents expand vertically to match leftCol and rightCol? This is a hack that will result in missing content when col is long: */
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/BookBody.png);
+    background-repeat: repeat-y;
+  }
+
+  #leftCol {
+    position: absolute;
+    top: 0px;
+    width: 430px;
+    left: 40px;
+  }
+
+  #rightCol {
+    position: absolute;
+    top: 0px;
+    width: 430px;
+    right: 40px;
+  }
+
+  #footer {
+    /* set position relative: anything inside with position absolute will use this as its reference */
+    position: relative;
+    width: 960px;
+    height: 162px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/BookFooter.png);
+    font-variant: small-caps;
+    text-align: center;
+  }
+
 }
