@@ -14,7 +14,7 @@ class Piece {
 const defaultPiece = 2;
 const pieces = [
     new Piece("Who's Who", "Who's Who (Vol. 1)"),
-    new Piece("Not Much To Ask", "Not Much to Ask (Vol. 1)"),
+    new Piece("NotMuchToAsk", "Not Much to Ask (Vol. 1)"),
     new Piece("Ophelia", "Ophelia (Vol. 1)"),
     new Piece("Falling Out", "Falling Out (Vol. 1)"),
     new Piece("Ariadne's Thread", "Ariadne's Thread (Vol. 1)"),
