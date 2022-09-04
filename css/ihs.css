@@ -96,54 +96,52 @@ body {
   background: whitesmoke;
 }
 
-@media only screen and (max-width: 959px) {
-  #header {
-    position: relative;
-    width: 100%;
-  }
-
-  #title {
-    position: relative;
-    text-align: center;
-    font-size: large;
-  }
-
-  #nav {
-    position: relative;
-    list-style: none;
-    z-index: 5;
-    font-variant: small-caps;
-    text-align: center;
-  }
-
-  #contents {
-    clear: both;
-    position: relative;
-    width: 100%;
-    padding-top: 10px;
-  }
-
-  #leftCol {
-    position: relative;
-    width: 90%;
-    padding-left: 20px;
-  }
-
-  #rightCol {
-    position: relative;
-    width: 90%;
-    padding-left: 20px;
-  }
-
-  #footer {
-    position: relative;
-    width: 100%;
-    font-variant: small-caps;
-    text-align: center;
-  }
+#header {
+  position: relative;
+  width: 100%;
 }
 
-@media only screen and (min-width: 960px) {
+#title {
+  position: relative;
+  text-align: center;
+  font-size: large;
+}
+
+#nav {
+  position: relative;
+  list-style: none;
+  z-index: 5;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+#contents {
+  clear: both;
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+}
+
+#leftCol {
+  position: relative;
+  width: 90%;
+  padding-left: 20px;
+}
+
+#rightCol {
+  position: relative;
+  width: 90%;
+  padding-left: 20px;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
   #header {
     /* set position relative: anything inside with position absolute will use this as its reference */
     position: relative;
