@@ -34,21 +34,37 @@
       <P>This album comes in two volumes: Volume 1 contains songs, and Volume 2 poems. Each volume has 2 CDs, and
         includes a booklet containing lyrics and poems.</P>
       <p>Listen to a sample:
-        <select id="selector" onchange="updateAudioSource()">
-          <option value="Ophelia">Ophelia (Vol. 1)</option>
-          <option value="Not Much to Ask">Not Much to Ask (Vol. 1)</option>
+        <select id="latr" onchange="updateAudioSource()">
+          <option value="Who's Who">1 Who's Who (Vol. 1)</option>
+          <option value="Not Much To Ask">2 Not Much to Ask (Vol. 1)</option>
+          <option value="Ophelia">3 Ophelia (Vol. 1)</option>
+          <option value="Falling Out">4 Falling Out (Vol. 1)</option>
+          <option value="Ariadne's Thread">5 Ariadne's Thread (Vol. 1)</option>
+          <option value="Ariel's Song">6 Ariel's Song (Vol. 1)</option>
+          <option value="Culture">7 Culture (Vol. 1)</option>
+          <option value="Lost Lyric">8 Lost Lyric (Vol. 1)</option>
+          <option value="Education">9 Education (Vol. 1)</option>
+          <option value="Inside Story">10 Inside Story (Vol. 1)</option>
+          <option value="Life Happened">11 Life Happened (Vol. 1)</option>
+          <option value="The Poet At Sixty">12 The Poet At Sixty (Vol. 1)</option>
+          <option value="The Future">13 The Future (Vol. 1)</option>
+          <option value="If It Were Not So">14 If It Were Not So (Vol. 1)</option>
+          <option value="Ephemera">15 Ephemera (Vol. 1)</option>
+          <option value="More Monsters">16 More Monsters (Vol. 1)</option>
+          <option value="Summer Day In The Tuileries">17 Summer Day In The Tuileries (Vol. 1)</option>
+          <option value="Exile">18 Exile (Vol. 1)</option>
+          <option value="Valediction">19 Valediction (Vol. 1)</option>
+          <option value="Saved - Healing">20 Saved - Healing (Vol. 1)</option>
           <option value="Church Service">Church Service (Vol. 2)</option>
-          <option value="Ariadne's Thread">Ariadne's Thread (Vol. 1)</option>
-          <option value="Exile">Exile (Vol. 1)</option>
           <option value="Advice to Other Writers">Advice to Other Writers (Vol. 2)</option>
         </select>
         <br><span style="font-size:60%">Player performance may vary depending on browser and connection speed.</span>
         <audio controls preload="auto" id="player">
-          <source id="audioMP3" src="mp3/Ophelia.mp3" type="audio/mpeg">
-          <source id="audioOGG" src="ogg/Ophelia.ogg" type="audio/ogg">
-          <source id="audioWAV" src="wav/Ophelia.wav" type="audio/wav">
+          <source id="audioMP3" src="mp3/Exile.mp3" type="audio/mpeg">
+          <source id="audioOGG" src="ogg/Exile.ogg" type="audio/ogg">
           Your browser does not support this audio player.
         </audio>
+        <button onclick="copyLink()">Copy link to clipboard</button>
       </p>
       <p class="thick">Read the <a href="./Like a Tide Rising liner notes.pdf">liner notes and lyrics</a>!</p>
       <p>You can buy this album from <a
@@ -65,6 +81,7 @@
   <div id="footer"></div>
   <script type="text/javascript">
     innerInit();
+    selectAudioSource();
   </script>
 </body>
 
