@@ -94,7 +94,6 @@ function prev() {
         // Wrap around
         selectedIndex = pieces.length - 1;
     }
-    console.log(`SHS prev(${selectedIndex})`);
     loadPiece(pieces[selectedIndex], 0)
 }
 
@@ -107,7 +106,6 @@ function next() {
         // Wrap around
         selectedIndex = 0;
     }
-    console.log(`SHS next(${selectedIndex})`);
     loadPiece(pieces[selectedIndex], 0)
 }
 
