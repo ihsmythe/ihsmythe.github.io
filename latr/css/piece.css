@@ -1,0 +1,49 @@
+.button {
+    font-size: large;
+    color: white;
+    background-color: darkgrey;
+    border-radius: 12px;
+    border: none;
+    vertical-align: top;
+  }
+  .button:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 9px 25px 0 rgba(0,0,0,0.19);
+  }
+  #playerNav {
+    position: relative;
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+  }
+  #player {
+    position: relative;
+    height: 30px;
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+  }
+@media screen and (min-width: 960px) {
+  #playerNav {
+    position: absolute;
+    top: 0px;
+  }
+  #player {
+    position: absolute;
+    top: 30px;
+    height: 30px;
+  }
+  #leftCol {
+    position: absolute;
+    top: 60px;
+    width: 400px;
+    left: 40px;
+  }
+  #rightCol {
+    position: absolute;
+    top: 60px;
+    width: 400px;
+    right: 40px;
+  }
+}
