@@ -11,7 +11,7 @@ class Piece {
     }
 }
 
-const defaultPiece = 2;
+const defaultPiece = 16;
 const pieces = [
     new Piece("Who's Who", "Who's Who (Vol. 1)"),
     new Piece("NotMuchToAsk", "Not Much to Ask (Vol. 1)"),

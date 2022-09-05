@@ -48,6 +48,9 @@ function init(prefix) {
     // Music
     navUL.appendChild(getMenuItem(prefix, 'latr/index.html', 'Music'));
 
+    // Videos
+    navUL.appendChild(getMenuItem(prefix, 'videos.html', 'Videos'));
+
     // Writing
     const writingLI = getMenuItem(prefix, 'index.html', 'Writing');
     navUL.appendChild(writingLI);
@@ -56,7 +59,7 @@ function init(prefix) {
     writingUL.appendChild(getMenuItem(prefix, 'dwynwen/index.html', 'Dwynwen\'s Feast'));
     writingUL.appendChild(getMenuItem(prefix, 'poetry/index.html', 'Poetry For Animals'));
     writingUL.appendChild(getMenuItem(prefix, 'stories/index.html', 'Stories For Animals'));
-    writingUL.appendChild(getMenuItem(prefix, 'skeptics/index.html', 'Skeptic'));
+    writingUL.appendChild(getMenuItem(prefix, 'mota/index.html', 'Myth of an Afterlife'));
     writingUL.appendChild(getMenuItem(prefix, 'plays/index.html', 'Plays'));
     writingUL.appendChild(getMenuItem(prefix, 'shorts/index.html', 'Short works'));
 
