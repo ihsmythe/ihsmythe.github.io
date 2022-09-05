@@ -57,9 +57,13 @@ function loadPieceSelector() {
 
 // Update the audio source from a query parameter, stop, replace audio source. Called from piece.html
 function selectAudioSource() {
+    // Get selected start time from query parameter
+    let startAt = parseInt(new URLSearchParams(window.location.search).get('s'));
+    if (isNaN(startAt) || startAt < 0) {
+        startAt = 0;
+    }
     // Get selected index from query parameter
-    const selectedLatr = new URLSearchParams(window.location.search).get('latr');
-    let selectedIndex = parseInt(selectedLatr);
+    let selectedIndex = parseInt(new URLSearchParams(window.location.search).get('latr'));
     if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= pieces.length) {
         selectedIndex = defaultPiece;
     }
@@ -75,7 +79,7 @@ function selectAudioSource() {
     ogg.src = piece.ogg;
     player = document.getElementById("player");
     player.pause(); // Stop playing
-    player.currentTime = 0; // Set to start
+    player.currentTime = startAt;
     player.load(); // Load new sources
     // Do not autoplay: player.play();
 
