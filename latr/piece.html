@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <title>Like a Tide Rising Excerpt</title>
+  <meta name="Description" content="'Like a Tide Rising' by Ingrid Hansen Smythe and Los Haward" />
+  <meta name="Keywords" content="composer, performer, Ingrid Hansen Smythe, Like a Tide Rising, Los Haward" />
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <script type="text/javascript" src="./js/latr.js"></script>
+  <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
+  <link href="./css/latr.css" rel="stylesheet" type="text/css" />
+  <style>
+    #player {
+      position: relative;
+      width: 90%;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+    }
+  @media screen and (min-width: 960px) {
+    #player {
+      position: absolute;
+      top: 0px;
+      width: 600px;
+      left: 160px;
+      text-align: center;
+    }
+    #leftCol {
+      position: absolute;
+      top: 40px;
+      width: 400px;
+      left: 40px;
+    }
+    #rightCol {
+      position: absolute;
+      top: 40px;
+      width: 400px;
+      right: 40px;
+    }
+  }
+  </style>
+  <div id="header"></div>
+
+</head>
+
+<body>
+  <div id="contents">
+    <audio controls preload="auto" id="player">
+        <source id="audioMP3" src="" type="audio/mpeg">
+        <source id="audioOGG" src="" type="audio/ogg">
+        Your browser does not support this audio player.
+    </audio>  
+    <div id="leftCol" class="center">
+    </div>
+    <div id="rightCol" class="center"></div>
+  </div>
+  <div id="footer"></div>
+  <script type="text/javascript">
+    innerInit();
+    selectAudioSource();
+  </script>
+</body>
+
+</html>
