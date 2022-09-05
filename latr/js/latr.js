@@ -3,6 +3,9 @@ if (top.frames.length != 0) {
     top.location = self.document.location;
 }
 
+const defaultPiece = 16;
+let selectedIndex = defaultPiece;
+
 class Piece {
     constructor(filename, title, leftCol, rightCol) {
         this.mp3 = `mp3/${filename}.mp3`;
@@ -13,7 +16,6 @@ class Piece {
     }
 }
 
-const defaultPiece = 16;
 const pieces = [
     new Piece("Who's Who", "Who's Who (Vol. 1)", "<p>You are not the flower.<br>Neither red nor blue nor green.<br>Not the sugar.<br>Not the arrow.</p><p>You are not the notes,<br>and you are not the top of the mountain.<br>You are not the notes,<br>and you are not the top of the mountain.</p>", "<p>You are not the flower, you are the perfume.<br>Neither red nor blue nor green, you are the colour scheme.<br>Not the sugar, but its sweetness.<br>Not the arrow, but its flight. </p><p>You are not the notes, you are the music.<br>And you are not the top of the mountain:<br>You are the act of arriving at the summit.</p><p>Not the sugar, but its sweetness.<br>Not the arrow, but its flight.</p>"),
     new Piece("NotMuchToAsk", "Not Much to Ask (Vol. 1)", "<p>There’s a message for me<br>in the sound of the rain<br>falling through the leaves of the trees.</p><p>It says to me that on the other side<br>of death’s dark doorway,<br>There is a garden made of light.</p>", "<p>And I can enter if I take off my shoes<br>Take off my self and my history.<br>I can enter if I take off my shoes<br>Take off my self and my history.</p><p>Well it’s not much to ask<br>not much to ask<br>not much to ask<br>it seems to me…</p>"),
@@ -55,7 +57,63 @@ function loadPieceSelector() {
     };
 }
 
-// Update the audio source from a query parameter, stop, replace audio source. Called from piece.html
+/**
+ * Given a piece from the array of pieces, load it into the player, update the page title, and load the lyrics.
+ * @param {object} piece - containing mp3, ogg, title, leftCol, and rightCol elements.
+ * @param {number} startAt - the second at which to start the player. Typcially 0.
+ */
+function loadPiece(piece, startAt) {
+   // Load piece title - this element should have been added during init
+   const title = document.getElementById("title");
+   title.innerHTML = piece.title;
+
+   // Load piece into player
+   mp3 = document.getElementById("audioMP3");
+   ogg = document.getElementById("audioOGG");
+   mp3.src = piece.mp3;
+   ogg.src = piece.ogg;
+   player = document.getElementById("player");
+   player.pause(); // Stop playing
+   player.currentTime = startAt;
+   player.load(); // Load new sources
+   // Do not autoplay: player.play();
+
+   // Load lyrics into columns
+   const leftCol = document.getElementById("leftCol");
+   leftCol.innerHTML = piece.leftCol;
+   const rightCol = document.getElementById("rightCol");
+   rightCol.innerHTML = piece.rightCol;
+}
+
+/**
+ * Decrement the current selectedIndex and load the previous piece.
+ */
+function prev() {
+    selectedIndex--;
+    if (selectedIndex < 0) {
+        // Wrap around
+        selectedIndex = pieces.length - 1;
+    }
+    console.log(`SHS prev(${selectedIndex})`);
+    loadPiece(pieces[selectedIndex], 0)
+}
+
+/**
+ * Increment the current selectedIndex and load the next piece.
+ */
+function next() {
+    selectedIndex++;
+    if (selectedIndex >= pieces.length) {
+        // Wrap around
+        selectedIndex = 0;
+    }
+    console.log(`SHS next(${selectedIndex})`);
+    loadPiece(pieces[selectedIndex], 0)
+}
+
+/**
+ * Update the audio source from a query parameter, stop, replace audio source. Called from piece.html.
+ */
 function selectAudioSource() {
     // Get selected start time from query parameter
     let startAt = parseInt(new URLSearchParams(window.location.search).get('s'));
@@ -63,29 +121,9 @@ function selectAudioSource() {
         startAt = 0;
     }
     // Get selected index from query parameter
-    let selectedIndex = parseInt(new URLSearchParams(window.location.search).get('latr'));
+    selectedIndex = parseInt(new URLSearchParams(window.location.search).get('latr'));
     if (isNaN(selectedIndex) || selectedIndex < 0 || selectedIndex >= pieces.length) {
         selectedIndex = defaultPiece;
     }
-    const piece = pieces[selectedIndex];
-    // Load piece title - this element should have been added during init
-    const title = document.getElementById("title");
-    title.innerHTML = piece.title;
-
-    // Load piece into player
-    mp3 = document.getElementById("audioMP3");
-    ogg = document.getElementById("audioOGG");
-    mp3.src = piece.mp3;
-    ogg.src = piece.ogg;
-    player = document.getElementById("player");
-    player.pause(); // Stop playing
-    player.currentTime = startAt;
-    player.load(); // Load new sources
-    // Do not autoplay: player.play();
-
-    // Load lyrics into columns
-    const leftCol = document.getElementById("leftCol");
-    leftCol.innerHTML = piece.leftCol;
-    const rightCol = document.getElementById("rightCol");
-    rightCol.innerHTML = piece.rightCol;
-}
+    loadPiece(pieces[selectedIndex], startAt);
+ }
