@@ -17,8 +17,8 @@ function topInit() {
 }
 
 // Called from pages one level deeper than top level
-function innerInit() {
-    init('../');
+function innerInit(cc) {
+    init('../', cc);
 }
 
 // Called from pages two levels deeper than top level
@@ -26,7 +26,7 @@ function inner2Init() {
     init('../../');
 }
 
-function init(prefix) {
+function init(prefix, cc) {
     const headerDiv = document.getElementById('header');
 
     // Add the document title and shared dropdown menu elements
@@ -64,7 +64,7 @@ function init(prefix) {
     writingUL.appendChild(getMenuItem(prefix, 'shorts/index.html', 'Short works'));
 
     const footerDiv = document.getElementById('footer');
-    footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} I. H. Smythe<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
+    footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} ${cc || 'I. H. Smythe'}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
 }
 
 function getMenuItem(prefix, target, text) {
