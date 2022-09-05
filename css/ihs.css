@@ -126,12 +126,14 @@ body {
   position: relative;
   width: 90%;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 #rightCol {
   position: relative;
   width: 90%;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 #footer {
@@ -190,14 +192,14 @@ body {
   #leftCol {
     position: absolute;
     top: 0px;
-    width: 430px;
+    width: 400px;
     left: 40px;
   }
 
   #rightCol {
     position: absolute;
     top: 0px;
-    width: 430px;
+    width: 400px;
     right: 40px;
   }
 
