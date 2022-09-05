@@ -31,6 +31,14 @@
       padding-right: 10px;
       text-align: center;
     }
+    #player {
+      position: relative;
+      width: 90%;
+      height: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+    }
   @media screen and (min-width: 960px) {
     #playerNav {
       position: absolute;
@@ -39,15 +47,23 @@
       left: 160px;
       text-align: center;
     }
+    #player {
+      position: absolute;
+      top: 30px;
+      height: 30px;
+      width: 600px;
+      left: 160px;
+      text-align: center;
+    }
     #leftCol {
       position: absolute;
-      top: 40px;
+      top: 60px;
       width: 400px;
       left: 40px;
     }
     #rightCol {
       position: absolute;
-      top: 40px;
+      top: 60px;
       width: 400px;
       right: 40px;
     }
@@ -61,15 +77,14 @@
   <div id="contents">
     <div id="playerNav">
       <button class="button" onclick="prev()">&lt;&lt;</button>
-      <audio controls preload="auto" id="player">
-          <source id="audioMP3" src="" type="audio/mpeg">
-          <source id="audioOGG" src="" type="audio/ogg">
-          Your browser does not support this audio player.
-      </audio> 
       <button class="button" onclick="next()">&gt;&gt;</button>
     </div>
-    <div id="leftCol" class="center">
-    </div>
+    <audio controls preload="auto" id="player">
+      <source id="audioMP3" src="" type="audio/mpeg">
+      <source id="audioOGG" src="" type="audio/ogg">
+      Your browser does not support this audio player.
+    </audio> 
+    <div id="leftCol" class="center"></div>
     <div id="rightCol" class="center"></div>
   </div>
   <div id="footer"></div>
