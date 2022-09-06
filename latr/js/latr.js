@@ -85,6 +85,11 @@ function loadPiece(piece, startAt) {
    rightCol.innerHTML = piece.rightCol;
 }
 
+function submitPlayerForm() {
+    document.getElementById("latr").value = selectedIndex;
+    document.getElementById("playerForm").submit();
+}
+
 /**
  * Decrement the current selectedIndex and load the previous piece.
  */
@@ -94,7 +99,7 @@ function prev() {
         // Wrap around
         selectedIndex = pieces.length - 1;
     }
-    loadPiece(pieces[selectedIndex], 0)
+    submitPlayerForm();
 }
 
 /**
@@ -106,7 +111,7 @@ function next() {
         // Wrap around
         selectedIndex = 0;
     }
-    loadPiece(pieces[selectedIndex], 0)
+    submitPlayerForm();
 }
 
 /**
