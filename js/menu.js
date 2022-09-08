@@ -64,7 +64,7 @@ function init(prefix, cc) {
     writingUL.appendChild(getMenuItem(prefix, 'shorts/index.html', 'Short works'));
 
     const footerDiv = document.getElementById('footer');
-    footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} ${cc || 'I. H. Smythe'}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
+    footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} ${cc || 'Ingrid Hansen Smythe'}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
 }
 
 function getMenuItem(prefix, target, text) {
