@@ -24,6 +24,9 @@
     padding-right: 15%;
     text-align: center;
   }
+  .leftPage {
+    text-align: left
+  }
 @media screen and (min-width: 960px) {
   #playerNav {
     position: absolute;
@@ -45,5 +48,17 @@
     top: 60px;
     width: 400px;
     right: 40px;
+  }
+  .smallPage {
+    font-size: small
+  }
+  .xsmallPage {
+    font-size: x-small
+  }
+  .xxsmallPage {
+    font-size: xx-small
+  }
+  .leftPage {
+    text-align: left
   }
 }
