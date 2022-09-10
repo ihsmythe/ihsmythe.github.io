@@ -24,7 +24,7 @@
       </div>
       <p><cite>It is difficult to get the news from poems, yet men and women die miserably every day for lack of what is found there.*</cite></p>
       <p>I believe that's true, which is why I'm delighted to be the one to offer up these poems (and lyrics) from
-        my album, <a href="./latr/index.html"><I>Like a Tide Rising</I></a>. Here the enigmatic writer Los Haward gives
+        my album, <I>Like a Tide Rising</I>. Here the enigmatic writer Los Haward gives
         us a dazzling selection of his work that's alternately reverent, irreverent, gut-wrenchingly sad, explosively
         joyous, pessimistic, optimistic, funny, and tragic&mdash;sometimes all in the same poem. His work is so evocative,
         insightful, and inspiring it quite literally made me sing&mdash;and I couldn't believe my luck when he told me
@@ -36,8 +36,11 @@
     </div>
     <div id="rightCol">
       <p>Listen to the album here!
-        <form action="piece.html">
-          <select onchange="this.form.submit()" id="latr" name="latr"></select>
+        <form action="volume1.html">
+          Volume 1: <select onchange="this.form.submit()" id="vol1" name="index"></select>
+        </form>
+        <form action="volume2.html">
+          Volume 2: <select onchange="this.form.submit()" id="vol2" name="index"></select>
         </form>
       </p>
       <p class="thick">Read the <a href="./Like a Tide Rising liner notes.pdf">liner notes and lyrics</a>!</p>
@@ -59,7 +62,7 @@
   <div id="footer"></div>
   <script type="text/javascript">
     innerInit();
-    loadPieceSelector();
+    loadPieceSelectors();
   </script>
 </body>
 

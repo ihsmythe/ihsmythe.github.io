@@ -5,9 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../images/favicon.png">
-  <title>Like a Tide Rising Excerpt</title>
-  <meta name="Description" content="'Like a Tide Rising' by Ingrid Hansen Smythe and Los Haward" />
-  <meta name="Keywords" content="composer, performer, Ingrid Hansen Smythe, Like a Tide Rising, Los Haward" />
+  <title>Like a Tide Rising Volume 2</title>
+  <meta name="Description" content="'Like a Tide Rising Volume 2' by Ingrid Hansen Smythe and Los Haward" />
+  <meta name="Keywords" content="composer, performer, Like a Tide Rising, Los Haward" />
   <script type="text/javascript" src="../js/menu.js"></script>
   <script type="text/javascript" src="./js/latr.js"></script>
   <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
@@ -20,24 +20,23 @@
 <body>
   <div id="contents">
     <div id="playerNav">
-      <button class="button" onclick="prev()">&lt;&lt;</button>
-      <button class="button" onclick="next()">&gt;&gt;</button>
-      <form id="playerForm" action="piece.html">
-        <input type="hidden" id="latr" name="latr">
+      <button class="button" onclick="prev(1)">&lt;&lt;</button>
+      <button class="button" onclick="next(1)">&gt;&gt;</button>
+      <form id="playerForm" action="volume2.html">
+        <input type="hidden" id="latr" name="index">
       </form>
     </div>
     <audio controls preload="auto" id="player">
       <source id="audioMP3" src="" type="audio/mpeg">
       <source id="audioOGG" src="" type="audio/ogg">
       Your browser does not support this audio player.
-    </audio> 
+    </audio>
     <div id="leftCol" class="center"></div>
     <div id="rightCol" class="center"></div>
   </div>
   <div id="footer"></div>
   <script type="text/javascript">
-    innerInit('Ingrid Hansen Smythe and Los Haward');
-    selectAudioSource();
+    selectAudioSource(1);
   </script>
 </body>
 
