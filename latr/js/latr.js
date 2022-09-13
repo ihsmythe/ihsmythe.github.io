@@ -301,19 +301,34 @@ function prev(volIndex) {
     document.getElementById("playerForm").submit();
 }
 
-/**
- * Increment the current selectedPiece and load the next piece.
- */
-function next(volIndex) {
-    const volume = volumes[volIndex];
+function incrementSelectedPiece(volume) {
     volume.selectedPiece++;
     if (volume.selectedPiece >= volume.pieces.length) {
         // Wrap around
         volume.selectedPiece = 0;
     }
+}
+
+/**
+ * Increment the current selectedPiece and load the next piece by submitting the form
+ */
+function next(volIndex) {
+    const volume = volumes[volIndex];
+    incrementSelectedPiece(volume);
     // 'latr' is the hidden value in the form holding the selected piece. It transmits an 'index' value
     document.getElementById('latr').value = volume.selectedPiece;
     document.getElementById("playerForm").submit();
+}
+
+/**
+ * Increment the current selectedPiece and load the next piece by replacing the current page contents, and start playing it
+ */
+function loadNext(volIndex) {
+    const volume = volumes[volIndex];
+    incrementSelectedPiece(volume);
+    loadPiece(volume.pieces[volume.selectedPiece], 0);
+    const player = document.getElementById('player');
+    player.play();
 }
 
 /**

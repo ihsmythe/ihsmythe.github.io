@@ -25,7 +25,7 @@
         <input type="hidden" id="latr" name="index">
       </form>
     </div>
-    <audio controls preload="auto" id="player">
+    <audio controls preload="auto" id="player" onended="loadNext(0)">
       <source id="audioMP3" src="" type="audio/mpeg">
       <source id="audioOGG" src="" type="audio/ogg">
       Your browser does not support this audio player.
