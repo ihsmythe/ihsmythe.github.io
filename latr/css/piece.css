@@ -27,6 +27,14 @@
   .leftPage {
     text-align: left
   }
+  dt {
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 0.5em;
+  }
+  dd {
+    margin: 0;
+  }
 @media screen and (min-width: 960px) {
   #playerNav {
     position: absolute;
