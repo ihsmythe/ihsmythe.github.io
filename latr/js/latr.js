@@ -14,7 +14,7 @@ class Volume {
 }
 
 class Piece {
-    constructor(filename, title, leftLyrics, rightLyrics, leftCredits, rightCredits, optClass) {
+    constructor(filename, title, leftLyrics, rightLyrics, leftCredits, rightCredits, options) {
         this.mp3 = `mp3/${filename}.mp3`;
         this.ogg = `ogg/${filename}.ogg`;
         this.title = title;
@@ -22,7 +22,7 @@ class Piece {
         this.rightLyrics = rightLyrics;
         this.leftCredits = leftCredits;
         this.rightCredits = rightCredits;
-        this.optClass = optClass;
+        this.options = options;
     }
 }
 
@@ -573,7 +573,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xsmallPage"),
+                { height: 1020 }),
             new Piece("Bad Karma",
                 "Bad Karma",
                 [
@@ -622,7 +622,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xsmallPage"),
+                { height: 1100 }),
             new Piece("I Made This For You, Even Though",
                 "I Made This For You, Even Though",
                 [
@@ -651,7 +651,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xxsmallPage"),
+                { height: 1400 }),
             new Piece("Nothing but the Truth",
                 "Nothing but the Truth",
                 [
@@ -701,7 +701,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "leftPage"),
+                { class: 'leftPage' }),
             new Piece("Postcards to Oblivion",
                 "Postcards to Oblivion",
                 [
@@ -719,7 +719,7 @@ const volumes = [
                         "piano"
                     ]
                 },
-                "leftPage"),
+                { class: 'leftPage' }),
             new Piece("Don't",
                 "Don't",
                 [
@@ -782,7 +782,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xxsmallPage"),
+                { height: 1400 }),
             new Piece("Transmission",
                 "Transmission",
                 [
@@ -805,7 +805,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "smallPage"),
+                { height: 900 }),
             new Piece("The History of Fire",
                 "The History of Fire",
                 [
@@ -849,7 +849,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xsmallPage"),
+                { height: 1100 }),
             new Piece("Heavy Metal",
                 "Heavy Metal",
                 [
@@ -871,7 +871,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xsmallPage"),
+                { height: 1000 }),
             new Piece("Prophecy",
                 "Prophecy",
                 [
@@ -988,7 +988,9 @@ const volumes = [
                     "Los Haward": [
                         "writer and reader"
                     ]
-                }),
+                },
+                undefined,
+                { height: 900 }),
             new Piece("Keeping Up Appearances",
                 "Keeping Up Appearances",
                 [
@@ -1007,7 +1009,7 @@ const volumes = [
                     ]
                 },
                 undefined,
-                "xsmallPage"),
+                { height: 1100 }),
             new Piece("Lost Lyric volume 2",
                 "Lost Lyric",
                 [
@@ -1028,7 +1030,9 @@ const volumes = [
                     "Los Haward": [
                         "writer and reader"
                     ]
-                }),
+                },
+                undefined,
+                { height: 850 }),
             new Piece("Advice to Other Writers",
                 "Advice to Other Writers",
                 [
@@ -1073,7 +1077,7 @@ function loadLyrics(colId, lyricsArray) {
     }
     // Each paragraph is an element in the array
     lyricsArray.forEach((lyricPara) => {
-        const para = document.createElement("p");
+        const para = document.createElement('p');
         para.innerHTML = lyricPara;
         col.appendChild(para);
     });
@@ -1093,18 +1097,52 @@ function loadCredits(colId, credits) {
     // Credits have keys for each person, and each key's value is an array of items.
     // Translate these into List, Term and Definition elements.
     if (credits) {
-        const dl = document.createElement("dl");
+        const dl = document.createElement('dl');
         col.appendChild(dl);
         Object.keys(credits).forEach((credit) => {
-            const dt = document.createElement("dt");
+            const dt = document.createElement('dt');
             dl.appendChild(dt);
             dt.innerHTML = credit;
             credits[credit].forEach((item) => {
-                const dd = document.createElement("dd");
+                const dd = document.createElement('dd');
                 dl.appendChild(dd);
                 dd.innerHTML = item;
             });
         });
+    }
+}
+
+/**
+ * Long lyrics may require a longer book, and some lyrics need a specific css class such as leftPage.
+ * @param {object} options - May contain alternative height in px of the contents div, or different class for columns
+ * @param {boolean} isReset - if true, un-apply height and class, otherwise apply options if present
+ */
+function applyOptions(options, isReset) {
+    if (options) {
+        if (options.class) {
+            const leftCol = document.getElementById('leftCol');
+            const rightCol = document.getElementById('rightCol');
+            if (isReset) {
+                // Remove the small font - not needed for credits
+                leftCol.classList.remove(options.class);
+                rightCol.classList.remove(options.class);
+            } else {
+                leftCol.classList.add(options.class);
+                rightCol.classList.add(options.class);
+            }
+        }
+
+        // Only modify the height of the contents if we're in browser mode
+        const mediaQuery = window.matchMedia('(min-width: 960px)');
+        if (mediaQuery.matches) {
+            const contents = document.getElementById('contents');
+            if (options.height && !isReset) {
+                contents.style.height = `${options.height}px`; 
+            } else {
+                // Default height should match what's in ihs.css
+                contents.style.height = '800px'; 
+            }
+        }
     }
 }
 
@@ -1115,27 +1153,24 @@ function loadCredits(colId, credits) {
  */
 function loadPiece(piece, startAt) {
     // Load piece title - this element should have been added during init
-    const title = document.getElementById("title");
+    const title = document.getElementById('title');
     title.innerHTML = piece.title;
 
     // Load piece into player
-    mp3 = document.getElementById("audioMP3");
-    ogg = document.getElementById("audioOGG");
+    mp3 = document.getElementById('audioMP3');
+    ogg = document.getElementById('audioOGG');
     mp3.src = piece.mp3;
     ogg.src = piece.ogg;
-    player = document.getElementById("player");
+    player = document.getElementById('player');
     player.pause(); // Stop playing
     player.currentTime = startAt;
     player.load(); // Load new sources
     // Do not autoplay: player.play();
 
     // Load lyrics into columns
-    loadLyrics("leftCol", piece.leftLyrics);
-    loadLyrics("rightCol", piece.rightLyrics);
-    if (piece.optClass) {
-        leftCol.classList.add(piece.optClass);
-        rightCol.classList.add(piece.optClass);
-    }
+    loadLyrics('leftCol', piece.leftLyrics);
+    loadLyrics('rightCol', piece.rightLyrics);
+    applyOptions(piece.options, false);
 }
 
 /**
@@ -1151,7 +1186,7 @@ function prev(volIndex) {
     }
     // 'latr' is the hidden value in the form holding the selected piece. It transmits an 'index' value
     document.getElementById('latr').value = volume.selectedPiece;
-    document.getElementById("playerForm").submit();
+    document.getElementById('playerForm').submit();
 }
 
 /**
@@ -1175,7 +1210,7 @@ function next(volIndex) {
     incrementSelectedPiece(volume);
     // 'latr' is the hidden value in the form holding the selected piece. It transmits an 'index' value
     document.getElementById('latr').value = volume.selectedPiece;
-    document.getElementById("playerForm").submit();
+    document.getElementById('playerForm').submit();
 }
 
 /**
@@ -1221,25 +1256,18 @@ function toggle(volIndex) {
     const rightCol = document.getElementById('rightCol');
     const toggle = document.getElementById('toggle');
 
-    if (toggle.value === "Credits") {
+    if (toggle.value === 'Credits') {
         // Replace lyrics with credits
-        toggle.value = "Lyrics";
-        loadCredits("leftCol", piece.leftCredits);
-        loadCredits("rightCol", piece.rightCredits);
-        if (piece.optClass) {
-            // Remove the small font - not needed for credits
-            leftCol.classList.remove(piece.optClass);
-            rightCol.classList.remove(piece.optClass);
-        }
+        toggle.value = 'Lyrics';
+        loadCredits('leftCol', piece.leftCredits);
+        loadCredits('rightCol', piece.rightCredits);
+        applyOptions(piece.options, true); // Set to default
     } else {
         // Replace credits with lyrics
-        toggle.value = "Credits";
-        loadLyrics("leftCol", piece.leftLyrics);
-        loadLyrics("rightCol", piece.rightLyrics);
-        if (piece.optClass) {
-            leftCol.classList.add(piece.optClass);
-            rightCol.classList.add(piece.optClass);
-        }
+        toggle.value = 'Credits';
+        loadLyrics('leftCol', piece.leftLyrics);
+        loadLyrics('rightCol', piece.rightLyrics);
+        applyOptions(piece.options, false); // Set to optional height or default
     }
 
 }

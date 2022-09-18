@@ -57,15 +57,6 @@
     width: 400px;
     right: 40px;
   }
-  .smallPage {
-    font-size: small
-  }
-  .xsmallPage {
-    font-size: x-small
-  }
-  .xxsmallPage {
-    font-size: xx-small
-  }
   .leftPage {
     text-align: left
   }
