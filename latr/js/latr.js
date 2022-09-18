@@ -271,7 +271,6 @@ const volumes = [
                 ], {
                     "Ingrid Hansen Smythe": [
                         "composition",
-                        "lead vocals",
                         "instruments"
                     ],
                     "Los Haward": [
@@ -288,7 +287,6 @@ const volumes = [
                 ], {
                     "Ingrid Hansen Smythe": [
                         "composition",
-                        "lead vocals",
                         "instruments"
                     ],
                     "Los Haward": [
@@ -368,7 +366,8 @@ const volumes = [
                     "And if it were not for the fact<br>that I am just the way I am,<br>I might have found a way to get to you."
                 ], {
                     "Ingrid Hansen Smythe": [
-                        "composition, instruments"
+                        "composition",
+                        "instruments"
                     ],
                     "Los Haward": [
                         "writer and reader"
@@ -391,7 +390,6 @@ const volumes = [
                 ], {
                     "Ingrid Hansen Smythe": [
                         "composition",
-                        "lead vocals",
                         "instruments"
                     ],
                     "Los Haward": [
@@ -423,7 +421,7 @@ const volumes = [
                         "backup vocals"
                     ]
                 }),
-            new Piece("SummerDay in the Tuileries",
+            new Piece("Summer Day in the Tuileries",
                 "Summer Day In The Tuileries",
                 [
                     "The waves were leaving through the trees,<br>waving and weaving through the leafing trees,<br>in the dapple-dabbed park of the Tuileries.",
@@ -441,7 +439,7 @@ const volumes = [
                         "instruments"
                     ],
                     "Los Haward": [
-                        "writer and reader"
+                        "writer"
                     ]
                 }, {
                     "<a href=\"https://arielfiess.wixsite.com/love\">Ariel Fiess</a>": [
@@ -461,7 +459,6 @@ const volumes = [
                 ], {
                     "Ingrid Hansen Smythe": [
                         "composition",
-                        "lead vocals",
                         "instruments"
                     ],
                     "Los Haward": [
@@ -489,7 +486,7 @@ const volumes = [
                         "instruments"
                     ],
                     "Los Haward": [
-                        "writer and reader"
+                        "writer"
                     ]
                 }, {
                     "<a href=\"https://sapphomusic.com/\">Sappho Hansen Smythe</a>": [
@@ -513,7 +510,7 @@ const volumes = [
                         "instruments"
                     ],
                     "Los Haward": [
-                        "writer and reader"
+                        "writer"
                     ]
                 }, {
                     "<a href=\"https://sapphomusic.com/\">Sappho Hansen Smythe</a>": [
