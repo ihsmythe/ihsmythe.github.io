@@ -42,16 +42,7 @@ function init(prefix, cc) {
     // Home
     navUL.appendChild(getMenuItem(prefix, 'index.html', 'Home'));
 
-    // Gallery
-    navUL.appendChild(getMenuItem(prefix, 'gallery/index.html', 'Gallery'));
-
-    // Music
-    navUL.appendChild(getMenuItem(prefix, 'latr/index.html', 'Music'));
-
-    // Videos
-    navUL.appendChild(getMenuItem(prefix, 'videos.html', 'Videos'));
-
-    // Writing
+    // Writing gets submenu items
     const writingLI = getMenuItem(prefix, 'index.html', 'Writing');
     navUL.appendChild(writingLI);
     const writingUL = document.createElement('ul');
@@ -62,17 +53,29 @@ function init(prefix, cc) {
     writingUL.appendChild(getMenuItem(prefix, 'mota/index.html', 'Myth of an Afterlife'));
     writingUL.appendChild(getMenuItem(prefix, 'plays/index.html', 'Plays'));
     writingUL.appendChild(getMenuItem(prefix, 'shorts/index.html', 'Short works'));
+ 
+    // Music
+    navUL.appendChild(getMenuItem(prefix, 'latr/index.html', 'Music'));
+
+    // Gallery
+    navUL.appendChild(getMenuItem(prefix, 'gallery/index.html', 'Gallery'));
+
+    // Videos
+    navUL.appendChild(getMenuItem(prefix, 'videos.html', 'Videos'));
 
     const footerDiv = document.getElementById('footer');
     footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} ${cc || 'Ingrid Hansen Smythe'}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
 }
 
+/**
+ * Create and append a new list item to the list
+ * @param {string} prefix - relative path, e.g. ../ to pop up one level.
+ * @param {string} target - target page, e.g. index.html. For dropdown lists the target is the home page.
+ * @param {string} text - words to display in the menu
+ * @returns new list item
+ */
 function getMenuItem(prefix, target, text) {
     const href = window.location.href;
-
-    // Create and append a new list item to the list
-    // Although it'd be simple to create a raw text node and apply it directly to the list item,
-    // such text nodes cannot be padded etc. Better to create a paragraph, which can be.
     const li = document.createElement('li');
     const a = document.createElement('a');
     a.href = prefix + target;
