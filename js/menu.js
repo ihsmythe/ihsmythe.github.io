@@ -27,6 +27,11 @@ function inner2Init() {
 }
 
 function init(prefix, cc) {
+    // If http, reload with https
+    if (location.host.indexOf("localhost") < 0 && location.protocol.toLowerCase() !== "https:") {
+        const url = `https://${location.host}`;
+        location.replace(url);
+    }
     const headerDiv = document.getElementById('header');
 
     // Add the document title and shared dropdown menu elements
