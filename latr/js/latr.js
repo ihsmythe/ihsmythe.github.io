@@ -1,3 +1,5 @@
+import { init } from '../../js/menu.js';
+
 // Pop out of frame if possible
 if (top.frames.length != 0) {
     top.location = self.document.location;
@@ -1045,7 +1047,7 @@ const volumes = [
 ];
 
 // Load dropdown list for each volume. Called from index.html
-function loadPieceSelectors() {
+export function loadPieceSelectors() {
     volumes.map((volume) => {
         const latrSelect = document.getElementById(volume.elementId);
         // Populate initial blank entry
@@ -1154,11 +1156,11 @@ function loadPiece(piece, startAt) {
     title.innerHTML = piece.title;
 
     // Load piece into player
-    mp3 = document.getElementById('audioMP3');
-    ogg = document.getElementById('audioOGG');
-    mp3.src = piece.mp3;
-    ogg.src = piece.ogg;
-    player = document.getElementById('player');
+    const audioMP3 = document.getElementById('audioMP3');
+    const audioOGG = document.getElementById('audioOGG');
+    audioMP3.src = piece.mp3;
+    audioOGG.src = piece.ogg;
+    const player = document.getElementById('player');
     player.pause(); // Stop playing
     player.currentTime = startAt;
     player.load(); // Load new sources
@@ -1174,7 +1176,7 @@ function loadPiece(piece, startAt) {
  * Decrement the current selectedPiece and load the previous piece. Called from volume1.html or volume2.html.
  * @param {object} volume - The selected volume object
  */
-function prev(volIndex) {
+export function prev(volIndex) {
     const volume = volumes[volIndex];
     volume.selectedPiece--;
     if (volume.selectedPiece < 0) {
@@ -1202,7 +1204,7 @@ function incrementSelectedPiece(volume) {
  * Increment the current selectedPiece and load the next piece by submitting the form
  * @param {number} volIndex - Array index of selected volume
  */
-function next(volIndex) {
+export function next(volIndex) {
     const volume = volumes[volIndex];
     incrementSelectedPiece(volume);
     // 'latr' is the hidden value in the form holding the selected piece. It transmits an 'index' value
@@ -1226,9 +1228,9 @@ function loadNext(volIndex) {
  * Update the audio source from a query parameter, stop, replace audio source. Called from volume1.html or volume2.html
  * @param {number} volIndex - Array index of selected volume
  */
-function selectAudioSource(volIndex) {
+export function selectAudioSource(volIndex) {
     const volume = volumes[volIndex];
-    innerInit(volume.copyright);
+    init('../', volume.copyright);
     // Get selected start time from query parameter
     let startAt = parseInt(new URLSearchParams(window.location.search).get('s'));
     if (isNaN(startAt) || startAt < 0) {
@@ -1246,22 +1248,22 @@ function selectAudioSource(volIndex) {
  * Flip between showing lyrics and credits
  * @param {number} volIndex - Array index of selected volume
  */
-function toggle(volIndex) {
+export function toggle(volIndex) {
     const volume = volumes[volIndex];
     const piece = volume.pieces[volume.selectedPiece];
     const leftCol = document.getElementById('leftCol');
     const rightCol = document.getElementById('rightCol');
-    const toggle = document.getElementById('toggle');
+    const creditsLyricsButton = document.getElementById('creditsLyricsButton');
 
-    if (toggle.value === 'Credits') {
+    if (creditsLyricsButton.value === 'Credits') {
         // Replace lyrics with credits
-        toggle.value = 'Lyrics';
+        creditsLyricsButton.value = 'Lyrics';
         loadCredits('leftCol', piece.leftCredits);
         loadCredits('rightCol', piece.rightCredits);
         applyOptions(piece.options, true); // Set to default
     } else {
         // Replace credits with lyrics
-        toggle.value = 'Credits';
+        creditsLyricsButton.value = 'Credits';
         loadLyrics('leftCol', piece.leftLyrics);
         loadLyrics('rightCol', piece.rightLyrics);
         applyOptions(piece.options, false); // Set to optional height or default

@@ -8,8 +8,8 @@
   <title>Like a Tide Rising Volume 2</title>
   <meta name="Description" content="'Like a Tide Rising Volume 2' by Ingrid Hansen Smythe and Los Haward" />
   <meta name="Keywords" content="composer, performer, Like a Tide Rising, Los Haward" />
-  <script type="text/javascript" src="../js/menu.js"></script>
-  <script type="text/javascript" src="./js/latr.js"></script>
+  <script src="../js/menu.js" type="module"></script>
+  <script src="./js/vol2.js" type="module"></script>
   <link href="../css/ihs.css" rel="stylesheet" type="text/css" />
   <link href="./css/piece.css" rel="stylesheet" type="text/css" />
   <div id="header"></div>
@@ -19,9 +19,9 @@
 <body>
   <div id="contents">
     <div id="playerNav">
-      <button class="button" onclick="prev(1)">&lt;&lt;</button>
-      <input type="button" value="Credits" id="toggle"  onclick="toggle(1)"/>
-      <button class="button" onclick="next(1)">&gt;&gt;</button>
+      <button class="button" id="prev">&lt;&lt;</button>
+      <input type="button" value="Credits" id="creditsLyricsButton"/>
+      <button class="button" id="next">&gt;&gt;</button>
       <form id="playerForm" action="volume2.html">
         <input type="hidden" id="latr" name="index">
       </form>
@@ -35,9 +35,6 @@
     <div id="rightCol" class="center"></div>
   </div>
   <div id="footer"></div>
-  <script type="text/javascript">
-    selectAudioSource(1);
-  </script>
 </body>
 
 </html>

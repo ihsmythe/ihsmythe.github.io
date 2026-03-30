@@ -11,22 +11,7 @@ script.onload = function() {
 script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
 document.head.appendChild(script);
 
-// Called from almost every page to create header bar
-function topInit() {
-    init('');
-}
-
-// Called from pages one level deeper than top level
-function innerInit(cc) {
-    init('../', cc);
-}
-
-// Called from pages two levels deeper than top level
-function inner2Init() {
-    init('../../');
-}
-
-function init(prefix, cc) {
+export function init(prefix, cc) {
     // If http, reload with https
     if (location.host.indexOf("localhost") < 0 && location.protocol.toLowerCase() !== "https:") {
         const url = `https://${location.host}`;
