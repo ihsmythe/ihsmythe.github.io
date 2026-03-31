@@ -1,4 +1,4 @@
-import { selectAudioSource, prev, toggle, next } from './latr.js';
+import { selectAudioSource, prev, toggle, next, loadNext } from './latr.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     selectAudioSource(0);
@@ -14,4 +14,8 @@ document.getElementById('creditsLyricsButton').addEventListener('click', () => {
 
 document.getElementById('next').addEventListener('click', () => {
     next(0);
+});
+
+document.getElementById('player').addEventListener('ended', () => {
+    loadNext(0);
 });

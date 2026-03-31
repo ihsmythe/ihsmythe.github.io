@@ -1173,7 +1173,9 @@ function loadPiece(piece, startAt) {
 }
 
 /**
- * Decrement the current selectedPiece and load the previous piece. Called from volume1.html or volume2.html.
+ * Decrement the current selectedPiece and load the previous piece.
+ * Called from vol1.js or vol2.js when the 'prev' button is clicked.
+ * 
  * @param {object} volume - The selected volume object
  */
 export function prev(volIndex) {
@@ -1201,7 +1203,9 @@ function incrementSelectedPiece(volume) {
 }
 
 /**
- * Increment the current selectedPiece and load the next piece by submitting the form
+ * Increment the current selectedPiece and load the next piece by submitting the form.
+ * Called from vol1.js or vol2.js when the 'next' button is clicked.
+ * 
  * @param {number} volIndex - Array index of selected volume
  */
 export function next(volIndex) {
@@ -1213,10 +1217,12 @@ export function next(volIndex) {
 }
 
 /**
- * Increment the current selectedPiece and load the next piece by replacing the current page contents, and start playing it
+ * Increment the current selectedPiece and load the next piece by replacing the current page contents, and start playing it.
+ * Called from vol1.js or vol2.js when the player finishes playing a track.
+ * 
  * @param {number} volIndex - Array index of selected volume
  */
-function loadNext(volIndex) {
+export function loadNext(volIndex) {
     const volume = volumes[volIndex];
     incrementSelectedPiece(volume);
     loadPiece(volume.pieces[volume.selectedPiece], 0);
@@ -1225,7 +1231,9 @@ function loadNext(volIndex) {
 }
 
 /**
- * Update the audio source from a query parameter, stop, replace audio source. Called from volume1.html or volume2.html
+ * Update the audio source from a query parameter, stop, replace audio source.
+ * Called from vol1.js or vol2.js once DOM is loaded.
+ * 
  * @param {number} volIndex - Array index of selected volume
  */
 export function selectAudioSource(volIndex) {
@@ -1245,7 +1253,9 @@ export function selectAudioSource(volIndex) {
 }
 
 /**
- * Flip between showing lyrics and credits
+ * Flip between showing lyrics and credits.
+ * Called from vol1.js or vol2.js when creditsLyricsButton is clicked.
+ * 
  * @param {number} volIndex - Array index of selected volume
  */
 export function toggle(volIndex) {
