@@ -1,5 +1,5 @@
 import { init } from './menu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    init('../../', 'I. H. Smythe');
+    init('../../', `${new Date().getFullYear()} I. H. Smythe`);
 });

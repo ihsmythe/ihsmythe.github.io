@@ -54,7 +54,8 @@ export function init(prefix, cc) {
     navUL.appendChild(getMenuItem(prefix, 'videos.html', 'Videos'));
 
     const footerDiv = document.getElementById('footer');
-    footerDiv.innerHTML = `<br><br>&copy; ${new Date().getFullYear()} ${cc || 'Ingrid Hansen Smythe'}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
+    const copyright = cc || `${new Date().getFullYear()} Ingrid Hansen Smythe`;
+    footerDiv.innerHTML = `<br><br>&copy; ${copyright}<br>Pages designed and administered by<br><a href="http://hansensmythe.github.io">Steve Hansen Smythe</a>`;
 }
 
 /**

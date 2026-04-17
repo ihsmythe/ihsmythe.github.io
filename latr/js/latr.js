@@ -30,7 +30,7 @@ class Piece {
 
 const volumes = [
     new Volume("vol1",
-        "Ingrid Hansen Smythe and Los Haward", 16, [
+        "2018 Ingrid Hansen Smythe and Los Haward", 16, [
             new Piece(
                 "Who's Who",
                 "Who's Who",
@@ -524,7 +524,7 @@ const volumes = [
                 })
         ]),
     new Volume("vol2",
-        "Los Haward", 25, [
+        "2018 Los Haward", 25, [
             new Piece("These Things Shall Be",
                 "\"These Things Shall Be\"",
                 [
